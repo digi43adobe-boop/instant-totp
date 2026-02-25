@@ -131,15 +131,15 @@ export default function App() {
 
         {/* Code Display Section */}
         <div className="h-48 flex flex-col items-center justify-center relative w-full">
-          {code ? (
+         {code ? (
             <div className="relative group flex items-center justify-center">
               <div
-                className="text-6xl sm:text-8xl font-black tracking-[0.1em] sm:tracking-[0.2em] text-[#00FF00] drop-shadow-[0_0_15px_rgba(0,255,0,0.3)] cursor-pointer select-all"
+                className="text-5xl sm:text-7xl font-black tracking-[0.2em] text-[#00FF00] drop-shadow-[0_0_15px_rgba(0,255,0,0.3)] cursor-pointer select-all"
                 onClick={handleCopy}
               >
                 {code.slice(0, 3)} {code.slice(3)}
               </div>
-              
+
               <button
                 onClick={handleCopy}
                 className="absolute -right-4 sm:-right-12 top-1/2 -translate-y-1/2 p-2 text-zinc-600 hover:text-[#00FF00] transition-colors opacity-0 group-hover:opacity-100"
