@@ -105,22 +105,22 @@ export default function App() {
           <h1 className="text-3xl font-bold tracking-widest uppercase text-zinc-100">
             Instant TOTP
           </h1>
-          <p className="text-zinc-500 text-sm tracking-widest uppercase">
+          <p className="text-zinc-900 dark:text-white text-sm tracking-widest uppercase">
             Zero Storage • Zero Logging
           </p>
         </div>
 
         {/* Input Section */}
         <div className="w-full relative">
-          <input
-            type="text"
-            value={secret}
-            onChange={(e) => setSecret(e.target.value)}
-            placeholder="Paste Secret Key..."
-            className="w-full bg-transparent border-b border-zinc-800 pb-4 text-center text-2xl font-mono uppercase tracking-widest text-zinc-100 placeholder:text-zinc-800 placeholder:normal-case focus:outline-none focus:border-[#00FF00] transition-colors"
-            autoComplete="off"
-            spellCheck="false"
-          />
+        <input
+  type="text"
+  value={secret}
+  onChange={(e) => setSecret(e.target.value)}
+  placeholder="Paste Secret Key..."
+  className="w-full bg-transparent border-b-2 outline-none text-center text-xl tracking-widest pb-2 transition-colors text-white placeholder-zinc-500 border-zinc-500 focus:border-zinc-300"
+  autoComplete="off"
+  spellCheck="false"
+/>
           {error && secret && (
             <div className="absolute -bottom-8 left-0 right-0 flex items-center justify-center gap-2 text-red-500/80 text-sm">
               <ShieldAlert size={14} />
@@ -149,7 +149,7 @@ export default function App() {
               </button>
             </div>
           ) : (
-            <div className="text-zinc-800 text-5xl sm:text-7xl font-black tracking-[0.2em] select-none">
+            <div className="text-zinc-100 text-5xl sm:text-7xl font-black tracking-[0.2em] select-none">
               000 000
             </div>
           )}
