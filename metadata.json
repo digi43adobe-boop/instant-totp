@@ -1,0 +1,5 @@
+{
+  "name": "Instant TOTP",
+  "description": "A minimalist, zero-storage TOTP generator with a cyberpunk aesthetic.",
+  "requestFramePermissions": []
+}
