@@ -1,14 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700;800&display=swap');
 @import "tailwindcss";
 
 @theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
 
 body {
-  background-color: #050505;
-  color: #ffffff;
-  font-family: var(--font-mono);
+  background-color: #f8fafc; /* Nền xám rất nhạt */
+  color: #334155; /* Màu chữ tối vừa phải, không đen kịt */
+  font-family: var(--font-sans);
   margin: 0;
   padding: 0;
   min-height: 100vh;
