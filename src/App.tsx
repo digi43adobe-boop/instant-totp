@@ -92,12 +92,17 @@ export default function App() {
       {/* Khung thẻ chính */}
       <div className="w-full max-w-md bg-white/80 backdrop-blur-xl rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/50 p-8 sm:p-10 flex flex-col items-center gap-8 z-10">
         
-        {/* Logo */}
-        <img 
-          src="https://res.cloudinary.com/dz2hugofx/image/upload/v1772079170/Digi_43_-_Logo_Official-01_xql3wg.png"
-          alt="Digi 43 Logo"
-          className="w-40 sm:w-48 h-auto object-contain drop-shadow-sm" 
-        />
+        {/* Phần Header chứa Logo và Tên App */}
+        <div className="flex flex-col items-center gap-3">
+          <img 
+            src="https://res.cloudinary.com/dz2hugofx/image/upload/v1772079170/Digi_43_-_Logo_Official-01_xql3wg.png"
+            alt="Digi 43 Logo"
+            className="w-40 sm:w-48 h-auto object-contain drop-shadow-sm" 
+          />
+          <h1 className="text-lg sm:text-xl font-bold text-slate-700 text-center">
+            Lấy Code từ KEY 2FA
+          </h1>
+        </div>
 
         {/* Khu vực nhập Secret Key */}
         <div className="w-full space-y-3">
