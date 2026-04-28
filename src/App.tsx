@@ -90,7 +90,7 @@ export default function App() {
     <div className="min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
       
       {/* Khung thẻ chính */}
-      <div className="w-full max-w-md bg-white/80 backdrop-blur-xl rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/50 p-8 sm:p-10 flex flex-col items-center gap-8 z-10">
+      <div className="w-full max-w-md bg-white/80 backdrop-blur-xl rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/50 p-6 sm:p-10 flex flex-col items-center gap-6 sm:gap-8 z-10">
         
         {/* Phần Header chứa Logo và Tên App */}
         <div className="flex flex-col items-center gap-3">
@@ -111,9 +111,9 @@ export default function App() {
             <input
               type="text"
               value={secret}
-              onChange={(e) => setSecret(e.target.value)}
+              onChange={(e) => setSecret(e.target.value.replace(/\s+/g, ''))}
               placeholder="Nhập Secret Key vào đây..."
-              className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 text-center font-mono text-slate-700 placeholder:text-slate-400 focus:outline-none focus:border-indigo-400 focus:ring-4 focus:ring-indigo-100 transition-all"
+              className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-3.5 sm:px-5 sm:py-4 text-center font-mono text-slate-700 placeholder:text-slate-400 focus:outline-none focus:border-indigo-400 focus:ring-4 focus:ring-indigo-100 transition-all text-sm sm:text-base"
             />
           </div>
           
@@ -126,11 +126,11 @@ export default function App() {
         </div>
 
         {/* Khu vực hiển thị mã Code */}
-        <div className="h-40 flex flex-col items-center justify-center relative w-full bg-slate-50/50 rounded-2xl border border-slate-100">
+        <div className="min-h-[160px] py-6 sm:py-0 sm:h-40 flex flex-col items-center justify-center relative w-full bg-slate-50/50 rounded-2xl border border-slate-100">
           {code ? (
-            <div className="relative group flex flex-col items-center justify-center w-full">
+            <div className="flex flex-col items-center justify-center w-full gap-4">
               <div 
-                className="text-5xl sm:text-6xl font-black tracking-[0.15em] font-mono text-indigo-600 cursor-pointer select-all hover:scale-105 transition-transform duration-200"
+                className="text-4xl sm:text-5xl md:text-6xl font-black tracking-[0.15em] font-mono text-indigo-600 cursor-pointer select-all hover:scale-105 transition-transform duration-200"
                 onClick={handleCopy}
               >
                 {code.slice(0, 3)} <span className="text-indigo-400">{code.slice(3)}</span>
@@ -138,14 +138,28 @@ export default function App() {
 
               <button
                 onClick={handleCopy}
-                className="absolute -right-2 sm:right-2 top-1/2 -translate-y-1/2 p-3 bg-white text-slate-400 hover:text-indigo-600 rounded-xl shadow-sm border border-slate-100 transition-all hover:shadow-md opacity-0 group-hover:opacity-100"
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium transition-all active:scale-95 ${
+                  copied 
+                    ? 'bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm' 
+                    : 'bg-white text-indigo-600 border border-slate-200 shadow-sm hover:border-indigo-200 hover:shadow-md'
+                }`}
                 title="Sao chép mã"
               >
-                {copied ? <Check size={20} className="text-emerald-500" /> : <Copy size={20} />}
+                {copied ? (
+                  <>
+                    <Check size={18} />
+                    <span>Đã sao chép</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy size={18} />
+                    <span>Sao chép mã</span>
+                  </>
+                )}
               </button>
             </div>
           ) : (
-            <div className="text-slate-300 text-5xl sm:text-6xl font-black tracking-[0.15em] font-mono select-none">
+            <div className="text-slate-300 text-4xl sm:text-5xl md:text-6xl font-black tracking-[0.15em] font-mono select-none">
               000 000
             </div>
           )}
